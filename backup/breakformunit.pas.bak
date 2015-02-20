@@ -1,0 +1,85 @@
+unit BreakFormUnit;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, FileUtil, BCButton, BCLabel, Forms, Controls, Graphics,
+  Dialogs, ComCtrls, StdCtrls;
+
+type
+
+  { TFormBreak }
+
+  TFormBreak = class(TForm)
+    BCButtonCancel: TBCButton;
+    BCLabel1: TBCLabel;
+    ProgressBar1: TProgressBar;
+    procedure BCButtonCancelClick(Sender: TObject);
+    procedure FormCloseQuery(Sender: TObject; var CanClose: boolean);
+    procedure FormShow(Sender: TObject);
+  private
+    FStopped: boolean;
+    function GetProgress: integer;
+    procedure SetPassed(AValue: LongInt);
+    procedure SetPref(AValue: string);
+    procedure SetProgress(AValue: integer);
+    { private declarations }
+  public
+    { public declarations }
+    property Progress:integer read GetProgress write SetProgress;
+    property Passed:LongInt write SetPassed;
+    property Stopped:boolean read FStopped;
+    procedure CloseWindow;
+  end;
+
+var
+  FormBreak: TFormBreak;
+
+implementation
+
+{$R *.lfm}
+
+{ TFormBreak }
+
+procedure TFormBreak.BCButtonCancelClick(Sender: TObject);
+begin
+  FStopped := true;
+  Close;
+end;
+
+procedure TFormBreak.FormCloseQuery(Sender: TObject; var CanClose: boolean);
+begin
+  if not FStopped then CanClose:=false;
+end;
+
+procedure TFormBreak.FormShow(Sender: TObject);
+begin
+  FStopped := false;
+end;
+
+function TFormBreak.GetProgress: integer;
+begin
+  Result := ProgressBar1.Position;
+end;
+
+procedure TFormBreak.SetPassed(AValue: LongInt);
+begin
+  BCLabel1.Caption := IntToStr(AValue);
+end;
+
+
+procedure TFormBreak.SetProgress(AValue: integer);
+begin
+  ProgressBar1.Position := AValue;
+end;
+
+procedure TFormBreak.CloseWindow;
+begin
+  FStopped:=true;
+  Close;
+end;
+
+end.
+
