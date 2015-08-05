@@ -17,6 +17,7 @@
     <VersionInfo>
       <UseVersionInfo Value="True"/>
       <MajorVersionNr Value="1"/>
+      <RevisionNr Value="1"/>
       <Language Value="0422"/>
       <StringTable Comments="Lazarus 1.2.6" CompanyName="SlavikSOFT" FileDescription="Codes generator" LegalCopyright="iaroslav.tararaka@gmail.com" ProductName="Generator" ProductVersion="1.0"/>
     </VersionInfo>
@@ -42,7 +43,7 @@
         <PackageName Value="LCL"/>
       </Item3>
     </RequiredPackages>
-    <Units Count="4">
+    <Units Count="5">
       <Unit0>
         <Filename Value="GenerateProject.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -69,6 +70,13 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="GeneratorUnit"/>
       </Unit3>
+      <Unit4>
+        <Filename Value="questionformunit.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormQuestion"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="questionformunit"/>
+      </Unit4>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

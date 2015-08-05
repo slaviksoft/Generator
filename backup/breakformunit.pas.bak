@@ -23,7 +23,6 @@ type
     FStopped: boolean;
     function GetProgress: integer;
     procedure SetPassed(AValue: LongInt);
-    procedure SetPref(AValue: string);
     procedure SetProgress(AValue: integer);
     { private declarations }
   public

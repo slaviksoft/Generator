@@ -65,12 +65,20 @@ implementation
 
 {$R *.lfm}
 
+uses
+  questionformunit;
+
 { TMainForm }
 
 procedure TMainForm.BCButtonGenerateClick(Sender: TObject);
 var
   Gen:TGenerator;
+  Question: string;
 begin
+
+  if Trim(EditPref.Text) = '' then
+     if FormQuestion.ShowModal <> mrIgnore then exit;
+
   Gen := TGenerator.Create(Self);
   Gen.Codes := MemoCodes.Lines;
   Gen.MD5   := MemoMD5.Lines;

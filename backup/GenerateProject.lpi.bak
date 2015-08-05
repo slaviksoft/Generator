@@ -42,7 +42,7 @@
         <PackageName Value="LCL"/>
       </Item3>
     </RequiredPackages>
-    <Units Count="4">
+    <Units Count="5">
       <Unit0>
         <Filename Value="GenerateProject.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -69,6 +69,13 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="GeneratorUnit"/>
       </Unit3>
+      <Unit4>
+        <Filename Value="questionformunit.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormQuestion"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="questionformunit"/>
+      </Unit4>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
@@ -82,6 +89,9 @@
       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Linking>
+      <Debugging>
+        <GenerateDebugInfo Value="False"/>
+      </Debugging>
       <Options>
         <Win32>
           <GraphicApplication Value="True"/>

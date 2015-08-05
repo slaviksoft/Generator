@@ -7,6 +7,7 @@ object FormBreak: TFormBreak
   Caption = 'Прогрес'
   ClientHeight = 96
   ClientWidth = 314
+  Color = clWhite
   FormStyle = fsStayOnTop
   OnCloseQuery = FormCloseQuery
   OnShow = FormShow
@@ -122,7 +123,7 @@ object FormBreak: TFormBreak
     StateHover.FontEx.Style = [fsBold]
     StateHover.FontEx.TextAlignment = bcaCenter
     StateHover.FontEx.WordBreak = False
-    StateNormal.Background.Color = 11369058
+    StateNormal.Background.Color = 24639
     StateNormal.Background.ColorOpacity = 255
     StateNormal.Background.Gradient1.StartColor = 15722194
     StateNormal.Background.Gradient1.StartColorOpacity = 255
